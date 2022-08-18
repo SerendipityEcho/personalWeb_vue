@@ -119,5 +119,17 @@ module.exports = {
           config.optimization.runtimeChunk('single')
         }
       )
+  },
+  onBeforeSetupMiddleware: function(devServer) {
+    devServer.app.get('/api/seller', (req, res) => {
+      res.json({
+        core: 200,
+        data: {
+          id: 1,
+          name:'潇潇'
+        },
+        success: true
+      })
+    })
   }
 }
