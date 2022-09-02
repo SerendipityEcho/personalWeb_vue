@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
-import { getToken } from '@/utils/auth'
+import { getToken, removeToken } from '@/utils/auth'
+import { resetRouter } from '@/router'
 
 // create an axios instance
 const service = axios.create({
@@ -74,7 +75,13 @@ service.interceptors.response.use(
     }
   },
   error => {
-    
+    if(error.response.status == 401){
+      // 可以在这里设置token过期自动使用refreshToken获取新的
+      // 未获取到token的时候就清空token，跳转到登录页
+      // store.commit('')
+      removeToken()
+      resetRouter()
+    }
     console.log('err' + error) // for debug
     Message({
       message: error.message,

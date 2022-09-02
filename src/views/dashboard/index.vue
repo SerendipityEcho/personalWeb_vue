@@ -19,11 +19,11 @@ export default {
     },
 
     mounted() {
-        let pro = new Promise(function(resolve, reject){
-          resolve();
-        })
+        // let pro = new Promise(function(resolve, reject){
+        //   resolve();
+        // })
 
-        pro.then(this.change).then(this.get);
+        // pro.then(this.change).then(this.get);
     },
 
     methods: {

@@ -180,6 +180,18 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/lycoris',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'lycoris',
+        component: () => import('@/views/lycoris'),
+        meta: { title: 'LycorisRecoil', icon: 'form' }
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
