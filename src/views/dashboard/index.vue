@@ -5,13 +5,17 @@
 </template>
 
 <script>
-import axios from "axios";
 import { mapGetters } from "vuex";
 
 export default {
     name: "Dashboard",
     computed: {
         ...mapGetters(["name"]),
+    },
+    data(){
+        return {
+            name: "小易"
+        }
     },
 
     mounted() {

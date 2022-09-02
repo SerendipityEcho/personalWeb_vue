@@ -12,7 +12,7 @@ export function getInfo(token) {
   return request({
     url: '/user',
     method: 'get',
-    params: { token }
+    // params: { token }
   })
 }
 
@@ -20,5 +20,13 @@ export function logout() {
   return request({
     url: '/logout',
     method: 'post'
+  })
+}
+
+export function getUserList(data) {
+  return request({
+    url: '/user/list',
+    method: 'get',
+    data
   })
 }
