@@ -14,10 +14,10 @@
                     :inline="true"
                     :model="queryForm"
                 >
-                    <el-form-item label="角色名称：">
+                    <el-form-item label="权限名称：">
                         <el-input
-                            v-model="queryForm.roleName"
-                            placeholder="角色"
+                            v-model="queryForm.permission"
+                            placeholder="权限"
                         ></el-input>
                     </el-form-item>
                     <el-form-item style="float: right">
@@ -31,9 +31,9 @@
         </el-row>
         <el-row>
             <el-col :span="24">
-                <!-- 角色列表展示表格 -->
+                <!-- 权限列表展示表格 -->
                 <el-table
-                    :data="roleList"
+                    :data="accessList"
                     border
                     stripe
                     style="width: 100%"
@@ -46,14 +46,14 @@
                     </el-table-column>
                     <el-table-column
                         align="center"
-                        prop="roleName"
-                        label="角色名称"
+                        prop="permission"
+                        label="权限名称"
                         min-width="180"
                     >
                     </el-table-column>
                     <el-table-column
                         align="center"
-                        prop="roleIntro"
+                        prop="description"
                         label="描述"
                         min-width="180"
                     >
@@ -98,15 +98,15 @@
 </template>
 
 <script>
-import { getRoleList } from '@/api/role'
+import { getAccessList } from '@/api/access'
 export default {
-  name: 'PersonalWebVueRole',
+  name: 'PersonalWebVueAccess',
 
   data() {
     return {
-        roleList: [],
+        accessList: [],
         queryForm: {
-            roleName: ''
+            accessName: ''
         }
     }
   },
@@ -117,8 +117,8 @@ export default {
 
   methods: {
     queryInfo() {
-        getRoleList(this.queryForm).then((res)=>{
-            this.roleList = res.data
+        getAccessList(this.queryForm).then((res)=>{
+            this.accessList = res.data
         })
     },
     handleEdit(index, item) {},

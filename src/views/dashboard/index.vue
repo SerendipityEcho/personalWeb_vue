@@ -14,7 +14,7 @@ export default {
     },
     data(){
         return {
-            name: "小易"
+            username: "小易"
         }
     },
 

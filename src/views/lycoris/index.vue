@@ -77,7 +77,7 @@ export default {
         size: 10, // 大小
         autoFit: true , // 自适应容器大小
         character: 'walnut',  // 显示的角色
-        controls: false, // 底部控制栏是否显示
+        controls: true, // 底部控制栏是否显示
         stroke: {  // canvas 线条设置，默认 `#b4b4b4` & `10`
           color: '#b4b4b4',
           width: 10,

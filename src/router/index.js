@@ -177,6 +177,12 @@ export const constantRoutes = [
         name: 'role',
         component: () => import('@/views/role'),
         meta: { title: '角色管理', icon: 'form' }
+      },
+      {
+        path: 'access',
+        name: 'access',
+        component: () => import('@/views/access'),
+        meta: { title: '权限管理', icon: 'form' }
       }
     ]
   },
