@@ -187,6 +187,18 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/todo',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'todo',
+        component: () => import('@/views/todo'),
+        meta: { title: '待办事项', icon: 'form' }
+      }
+    ]
+  },
+  {
     path: '/lycoris',
     component: Layout,
     children: [
