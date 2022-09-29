@@ -199,7 +199,7 @@ export default {
       if (this.addTodoInfo == '') {
         return
       }
-      addTodo(this.addTodoInfo).then((res) => {
+      addTodo(this.todoForm).then((res) => {
         console.log(res)
         this.addTodoInfo = {}
         this.$message({
