@@ -23,3 +23,11 @@ export function updateTodo(params) {
     params
   })
 }
+
+export function deleteTodo(params) {
+  return request({
+    url: '/todo',
+    method: 'delete',
+    params
+  })
+}
